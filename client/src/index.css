@@ -1,0 +1,109 @@
+body {
+  color: #bbb;
+  background: #111;
+  font-family: 'Inter', sans-serif;
+  user-select: none;
+}
+
+#app {
+  max-width: 40rem;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 2rem;
+  align-items: start;
+  row-gap: 1rem;
+}
+
+h1 {
+  font-weight: 600;
+  img {
+    margin-right: 1rem;
+    height: 2.5rem;
+    vertical-align: text-bottom;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin: 1rem 0 0;
+}
+
+a {
+  color: unset;
+}
+
+#buttons {
+  border: solid #666;
+  border-width: 1px 0;
+  text-align: center;
+}
+
+#buttons button {
+  border: 1px solid #666;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  background: #222;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.8rem;
+  width: 10rem;
+  margin: 1rem;
+}
+#buttons button:hover {
+  border-color: #d81b60;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: inherit;
+  line-height: inherit;
+  margin-top: 0.5rem;
+  table-layout: fixed;
+  width: 100%;
+  margin-bottom: 2rem;
+  caption-side: bottom;
+}
+table caption {
+  text-align: left;
+  button {
+    border: 0;
+    margin-right: 0.25rem;
+  }
+}
+table caption button {
+  line-height: 0.7rem;
+  margin: 0 0.25rem 0 0;
+  vertical-align: middle;
+}
+th,
+td {
+  padding: 0.25rem 0.5rem 0.25rem 0;
+  text-align: left;
+}
+thead th,
+thead td {
+  border: solid #999;
+  border-width: 1px 0;
+}
+tbody th,
+tbody td {
+  border-bottom: 1px solid #333;
+}
+
+table.sortedTable thead th {
+  cursor: pointer;
+}
+
+@media (min-width: 40rem) {
+  #app {
+    grid-template-columns: 1fr 1fr;
+  }
+  header,
+  #buttons {
+    grid-column: span 2;
+  }
+}

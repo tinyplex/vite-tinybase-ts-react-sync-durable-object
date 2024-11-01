@@ -1,0 +1,13 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "vite-tinybase-ts-react-sync-durable-object-server"
+main = "index.ts"
+compatibility_date = "2024-10-11"
+route = { pattern = "vite.tinybase.cloud", custom_domain = true }
+
+[[durable_objects.bindings]]
+name = "TinyBaseDurableObjects"
+class_name = "TinyBaseDurableObject"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["TinyBaseDurableObject"]
