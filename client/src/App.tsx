@@ -54,6 +54,12 @@ export const App = () => {
       1
     );
     await synchronizer.startSync();
+
+    // If the websocket reconnects in the future, do another explicit sync.
+    synchronizer.getWebSocket().addEventListener('open', () => {
+      synchronizer.load().then(() => synchronizer.save());
+    });
+
     return synchronizer;
   });
 
