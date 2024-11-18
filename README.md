@@ -5,8 +5,9 @@ This is a [Vite](https://vitejs.dev/) template for a simple
 the TinyBase ui-react-dom module UI components, and also synchronizing between
 disparate browser windows using Cloudflare Durable Objects.
 
-This server does not currently store TinyBase state, so once all clients have
-been disconnected (and their browser storage cleared) synced data will be lost.
+The server can be configured to store TinyBase state, so even if all clients 
+have been disconnected (and their browser storage cleared) synced data will still 
+be available on the server for future connecting clients.
 
 <img width="847" alt="image" src="https://github.com/user-attachments/assets/c63f2789-94dd-4fd3-a5eb-e929c7b4897c">
 
@@ -50,7 +51,8 @@ there.
 The `vite.tinybase.cloud` server is hosted on Cloudflare and so if you choose to
 use that, you can reuse the wrangler.toml configuration in the server directory.
 Just remember to update it to match your account, domains, and required
-configuration.
+configuration. In the `index.ts` file, you can configure whether data will be
+stored in the Durable Object or just synchronized between clients.
 
 You will also have to have your client communicate with your new server by
 configuring the `SERVER` constant at the top of the client's `App.tsx` file.
