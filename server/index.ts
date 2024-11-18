@@ -12,10 +12,6 @@ import {
 const PERSIST_TO_DURABLE_OBJECT = false;
 
 export class TinyBaseDurableObject extends WsServerDurableObject {
-  constructor(ctx: any, env: any) {
-    super(ctx, env);
-  }
-
   onPathId(pathId: Id, addedOrRemoved: IdAddedOrRemoved) {
     console.info((addedOrRemoved ? 'Added' : 'Removed') + ` path ${pathId}`);
   }
