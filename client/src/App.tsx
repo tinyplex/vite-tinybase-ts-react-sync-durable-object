@@ -1,7 +1,7 @@
 import React, { StrictMode } from 'react';
 import ReconnectingWebSocket from 'reconnecting-websocket';
 import { createMergeableStore, MergeableStore } from 'tinybase';
-import { createSessionPersister } from 'tinybase/persisters/persister-browser';
+import { createLocalPersister } from 'tinybase/persisters/persister-browser';
 import { createWsSynchronizer } from 'tinybase/synchronizers/synchronizer-ws-client';
 import {
   Provider,
@@ -22,12 +22,11 @@ const SERVER = 'vite.tinybase.cloud';
 export const App = () => {
   const serverPathId = location.pathname;
 
-  const store = useCreateMergeableStore(() => createMergeableStore());
+  const store = useCreateMergeableStore(createMergeableStore);
 
   useCreatePersister(
     store,
-    (store) =>
-      createSessionPersister(store, 'local://' + SERVER + serverPathId),
+    (store) => createLocalPersister(store, 'local://' + SERVER + serverPathId),
     [],
     async (persister) => {
       await persister.startAutoLoad([
