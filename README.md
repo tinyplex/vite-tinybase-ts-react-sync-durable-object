@@ -1,5 +1,10 @@
 # vite-tinybase-ts-react-sync-durable-object
 
+> [!WARNING]
+> This template has been deprecated. Please use the far more useful [`create tinybase`](https://github.com/tinyplex/create-tinybase) instead. Thank you!
+
+---
+
 This is a [Vite](https://vitejs.dev/) template for a simple
 [TinyBase](https://tinybase.org/) app, using TypeScript and React, demonstrating
 the TinyBase ui-react-dom module UI components, and also synchronizing between
